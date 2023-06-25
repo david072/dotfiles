@@ -1,6 +1,6 @@
 #!/bin/bash
 
-feh --bg-fill ~/Pictures/wallpaper.jpg
+feh --bg-fill $(shuf -e -n1 ~/Pictures/wallpapers/*)
 
 cd ~/scripts/startup/
 # Configure right monitor layout

@@ -11,7 +11,10 @@ then
     PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 fi
 PATH="/var/lib/flatpak/exports/bin:$PATH"
-export PATH
+PATH="$HOME/Android/Sdk/cmdline-tools/latest/bin:$PATH"
+PATH="$HOME/Android/Sdk/emulator:$PATH"
+PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
+PATH="$HOME/.dotnet/tools:$PATH"
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=

@@ -3,6 +3,7 @@ if status is-interactive
   fish_add_path --path $HOME/Android/Sdk/emulator/
   fish_add_path --path /var/lib/flatpak/exports/bin 
   fish_add_path --path $HOME/.local/share/bob/nvim-bin
+  fish_add_path --path $HOME/.dotnet/tools
 
   ssh-add
 
