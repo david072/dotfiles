@@ -28,12 +28,12 @@ return {
 						},
 					},
 				},
-				csharp_ls = {},
 				-- dockerls = {},
 			},
 			setup = {},
 		},
 		config = function(plugin, opts)
+			require("lspconfig").gdscript.setup({})
 			require("plugins.lsp.servers").setup(plugin, opts)
 		end,
 	},

@@ -49,7 +49,8 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+q kill
@@ -209,7 +210,7 @@ bar {
 # Custom configuration
 # --------------------------------
 
-default_orientation vertical
+default_orientation horizontal
 hide_edge_borders smart_no_gaps
 
 workspace 2 output DP-2   # main

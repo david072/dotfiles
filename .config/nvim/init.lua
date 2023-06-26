@@ -10,3 +10,4 @@ vim.api.nvim_create_autocmd("User", {
 })
 
 vim.cmd("colorscheme catppuccin-mocha")
+vim.cmd("hi Normal guibg=None ctermbg=None")
