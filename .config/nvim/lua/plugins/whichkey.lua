@@ -30,6 +30,8 @@ return {
 				v = { name = "+Other" },
 				f = {
 					name = "+Flutter",
+					s = { "<cmd>FlutterRun<cr><cr>", "Start" },
+					q = { "<cmd>FlutterQuit<cr>", "Quit" },
 					r = { "<cmd>FlutterReload<cr>", "Hot reload" },
 					R = { "<cmd>FlutterRestart<cr>", "Hot restart" },
 				},

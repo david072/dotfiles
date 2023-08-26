@@ -28,12 +28,17 @@ return {
 						},
 					},
 				},
-				-- dockerls = {},
+				tsserver = {},
+				eslint = {},
+				html = {},
+				cssls = {},
+				svelte = {},
 			},
 			setup = {},
 		},
 		config = function(plugin, opts)
-			require("lspconfig").gdscript.setup({})
+			require("lspconfig").perlpls.setup({})
+			require("lspconfig").gopls.setup({})
 			require("plugins.lsp.servers").setup(plugin, opts)
 		end,
 	},
@@ -45,6 +50,7 @@ return {
 			ensure_installed = {
 				"stylua",
 				"ruff",
+				"gopls",
 			},
 		},
 		config = function(_, opts)

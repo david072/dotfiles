@@ -213,9 +213,9 @@ bar {
 default_orientation horizontal
 hide_edge_borders smart_no_gaps
 
-workspace 2 output DP-2   # main
 workspace 1 output HDMI-1 # left
-workspace 6 output HDMI-0 # right
+workspace 2 output DP-2   # main
+workspace 0 output HDMI-0 # right
 
 for_window [title="^Android Emulator"] floating enable
 
@@ -223,7 +223,8 @@ exec --no-startup-id bash ~/scripts/startup/startup.sh
 
 # sleep
 bindsym $mod+Shift+period exec systemctl suspend
-bindsym $mod+Ctrl+period exec "i3-nagbar -t warning -m 'You pressed the shutdown shortcut. Do you really want to shutdown the computer?' -B 'Yes, shutdown' 'exec shutdown now'"
+bindsym $mod+Ctrl+period exec "i3-nagbar -t warning -m 'You pressed the restart shortcut. Do you really want to restart the computer?' -B 'Yes, restart' 'exec shutdown -r now'"
+bindsym $mod+Ctrl+Shift+period exec "i3-nagbar -t warning -m 'You pressed the shutdown shortcut. Do you really want to shutdown the computer?' -B 'Yes, shutdown' 'exec shutdown now'"
 
 bindsym $mod+Shift+d exec bash ~/scripts/open_discord.sh
 bindsym $mod+Shift+t exec bash ~/scripts/open_twitch.sh
@@ -233,8 +234,8 @@ bindsym --release button2 kill
 bindsym --whole-window $mod+button3 floating toggle
 
 # Screenshots
-bindsym Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date)"
-bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)"
+bindsym Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date).png"
+bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date).png"
 
 ## Clipboard Screenshots
 bindsym Ctrl+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
