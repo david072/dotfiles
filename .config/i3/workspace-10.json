@@ -1,0 +1,31 @@
+{
+    "layout": "splitv",
+    "type": "con",
+    "nodes": [
+        {
+            "border": "normal",
+            "name": "Discord",
+            "percent": 0.5,
+            "type": "con",
+            "swallows": [
+                {
+                    "class": "^discord$",
+                    "instance": "^discord$"
+                }
+            ]
+        },
+        {
+            "border": "normal",
+            "name": "Spotify",
+            "percent": 0.5,
+            "type": "con",
+            "swallows": [
+                {
+                    "class": "^Spotify$",
+                    "instance": "^spotify$"
+                }
+            ]
+        }
+    ]
+}
+
