@@ -16,6 +16,8 @@ PATH="$HOME/Android/Sdk/emulator:$PATH"
 PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
 PATH="$HOME/.dotnet/tools:$PATH"
 
+CPATH="$(clang -v 2>&1 | grep "Selected GCC installation" | rev | cut -d' ' -f1 | rev)/include"
+
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
