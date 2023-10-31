@@ -1,3 +1,5 @@
+local util = require("user.util")
+
 local wk = lvim.builtin.which_key
 
 wk.mappings["S"] = {
@@ -45,4 +47,10 @@ wk.mappings["b"]["m"] = {
   name = "Move",
   n = { "<cmd>BufferLineMoveNext<cr>", "Next" },
   p = { "<cmd>BufferLineMovePrev<cr>", "Prev" },
+}
+
+lvim.builtin.which_key.mappings["G"] = {
+  name = "Go To",
+  c = { function() util.open_with_extension_if_exists("cpp") end, ".cpp file" },
+  h = { function() util.open_with_extension_if_exists("h") end, ".h file" },
 }
