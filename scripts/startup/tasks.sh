@@ -4,6 +4,6 @@
 tmux new -s bg-tasks -d "onedrive -m"
 tmux set-option -t bg-tasks remain-on-exit on
 # Hide mouse when not moved
-tmux new-window -t bg-tasks:1 "unclutter"
+tmux new-window -t bg-tasks:2 "unclutter"
 
 exit 0
