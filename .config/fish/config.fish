@@ -5,6 +5,7 @@ if status is-interactive
   fish_add_path --path $HOME/.local/share/bob/nvim-bin
   fish_add_path --path $HOME/.dotnet/tools
   fish_add_path --path $HOME/bin/Postman/Postman
+  fish_add_path --path $HOME/scripts/
 
   function fish_greeting
        echo '                 '(set_color F00)'___
