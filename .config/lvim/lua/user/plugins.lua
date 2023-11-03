@@ -4,6 +4,23 @@ lvim.plugins = {
     "catppuccin/nvim",
     name = "catppuccin",
   },
+  {
+    "ellisonleao/gruvbox.nvim",
+    priority = 1000,
+    name = "gruvbox",
+    config = function()
+      require("gruvbox").setup({
+        bold = true,
+        italic = {
+          emphasis = true,
+          comments = true,
+        },
+        strikethrough = true,
+        contrast = "hard",
+        -- transparent_mode = true,
+      })
+    end
+  },
 
   -- Highlight todo comments
   {

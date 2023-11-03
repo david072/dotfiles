@@ -49,8 +49,10 @@ wk.mappings["b"]["m"] = {
   p = { "<cmd>BufferLineMovePrev<cr>", "Prev" },
 }
 
-lvim.builtin.which_key.mappings["G"] = {
+wk.mappings["G"] = {
   name = "Go To",
   c = { function() util.open_with_extension_if_exists("cpp") end, ".cpp file" },
   h = { function() util.open_with_extension_if_exists("h") end, ".h file" },
 }
+
+wk.mappings["s"]["n"] = { "<cmd>nohlsearch<cr>", "Hide search results" }
