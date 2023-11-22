@@ -7,6 +7,8 @@ if status is-interactive
   fish_add_path --path $HOME/bin/Postman/Postman
   fish_add_path --path $HOME/scripts/
 
+  ssh-add ~/.ssh/david072_github 2> /dev/null
+
   function fish_greeting
        echo '                 '(set_color F00)'___
          ___======____='(set_color FF7F00)'-'(set_color FF0)'-'(set_color FF7F00)'-='(set_color F00)')
@@ -25,3 +27,6 @@ if status is-interactive
                              (UU)'(set_color normal)
    end
 end
+
+# opam configuration
+source /home/david/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
