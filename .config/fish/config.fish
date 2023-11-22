@@ -6,6 +6,7 @@ if status is-interactive
   fish_add_path --path $HOME/.dotnet/tools
   fish_add_path --path $HOME/bin/Postman/Postman
   fish_add_path --path $HOME/scripts/
+  fish_add_path --path $HOME/.local/bin
 
   ssh-add ~/.ssh/david072_github 2> /dev/null
 
