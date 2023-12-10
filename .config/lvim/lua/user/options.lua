@@ -54,7 +54,7 @@ end
 require("luasnip").filetype_extend("dart", { "flutter" })
 
 -- treesitter dart workaround
-lvim.builtin.treesitter.ignore_install = { "dart" }
+-- lvim.builtin.treesitter.ignore_install = { "dart" }
 
 vim.opt.shell = "/bin/fish"
 vim.o.linebreak = true
