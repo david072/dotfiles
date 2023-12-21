@@ -2,6 +2,11 @@ local util = require("user.util")
 
 local wk = lvim.builtin.which_key
 
+wk.mappings["j"] = {
+  '<cmd>lua require("trevj").format_at_cursor()',
+  "trevJ",
+}
+
 wk.mappings["S"] = {
   name = "persistence.nvim",
   s = { "<cmd>lua require('persistence').load()<cr>", },
@@ -31,6 +36,12 @@ wk.mappings["t"] = {
   r = { ":Telescope resume<cr>", "Resume" },
   f = { ":Telescope find_files<cr>", "Files" },
   g = { ":Telescope git_files<cr>", "Git Files" },
+}
+
+wk.mappings["T"] = {
+  name = "Trouble",
+  t = { "<cmd>TroubleToggle<cr>", "Toggle" },
+  r = { "<cmd>TroubleRefresh<cr>", "Refresh" },
 }
 
 wk.mappings["F"] = {

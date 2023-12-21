@@ -55,6 +55,7 @@ lvim.plugins = {
     end
   },
 
+  -- Repeating plugin commands with '.'
   { "tpope/vim-repeat" },
 
   -- Quickly jumping between recent files
@@ -62,8 +63,7 @@ lvim.plugins = {
 
   -- Easier jumping to characters in a line
   {
-    "phaazon/hop.nvim",
-    branch = "v2",
+    "smoka7/hop.nvim",
     config = function()
       require("hop").setup()
     end
@@ -77,11 +77,6 @@ lvim.plugins = {
   {
     "AckslD/nvim-trevJ.lua",
     config = 'require("trevj").setup()',
-    init = function()
-      vim.keymap.set('n', '<leader>j', function()
-        require("trevj").format_at_cursor()
-      end)
-    end
   },
 
   -- Flutter
@@ -102,5 +97,13 @@ lvim.plugins = {
   {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
+
+  {
+    "smoka7/multicursors.nvim",
+    event = "VeryLazy",
+    dependencies = { "smoka7/hydra.nvim" },
+    opts = {},
+    cmd = { 'MCstart', 'MCvisual', 'MCclear', 'MCpattern', 'MCvisualPattern', 'MCunderCursor' },
   },
 }

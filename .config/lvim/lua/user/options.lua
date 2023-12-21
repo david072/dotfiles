@@ -30,6 +30,8 @@ lvim.builtin.project.patterns = {
   "package.json",
   "requirements.txt",
   "pubspec.yaml",
+  "dune-project",
+  "Cargo.toml",
 }
 
 local _, actions = pcall(require, "telescope.actions")
@@ -61,47 +63,6 @@ vim.o.linebreak = true
 vim.o.wrap = false
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
--- lvim.builtin.telescope.pickers = {
---   git_files = {
---     layout_config = {
---       width = 0.4,
---       height = 0.5,
---     },
---   },
---   live_grep = {
---     layout_config = {
---       width = 0.7,
---       height = 0.7,
---     },
---     prompt_position = "center",
---     layout_strategy = "horizontal",
---   }
--- }
-
--- lvim.builtin.telescope.pickers.live_grep.layout_config = { width = 0.7, height = 0.7 }
--- lvim.builtin.telescope.pickers.live_grep.layout_strategy = "horizontal"
--- lvim.builtin.telescope.pickers.live_grep.prompt_position = "center"
-
--- lvim.builtin.telescope.defaults.layout_config = {
---   prompt_position = "center",
---   height = 0.9,
---   width = 0.9,
---   bottom_pane = {
---     height = 25,
---     preview_cutoff = 120,
---     prompt_position = "bottom",
---   },
---   center = {
---     height = 0.4,
---     width = 0.5,
---     preview_cutoff = 40,
---     prompt_position = "center",
---   }
--- }
-
--- lvim.builtin.telescope = {
---   active = true,
---   defaults = {
---     layout_strategy = "horizontal",
---   },
--- }
+local trouble = require("trouble.providers.telescope");
+lvim.builtin.telescope.defaults.mappings.i["<C-t>"] = trouble.open_with_trouble
+lvim.builtin.telescope.defaults.mappings.n["<C-t>"] = trouble.open_with_trouble
