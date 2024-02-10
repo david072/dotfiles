@@ -3,7 +3,7 @@ local util = require("user.util")
 local wk = lvim.builtin.which_key
 
 wk.mappings["j"] = {
-  '<cmd>lua require("trevj").format_at_cursor()',
+  '<cmd>lua require("trevj").format_at_cursor()<CR>',
   "trevJ",
 }
 

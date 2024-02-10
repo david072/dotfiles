@@ -106,4 +106,23 @@ lvim.plugins = {
     opts = {},
     cmd = { 'MCstart', 'MCvisual', 'MCclear', 'MCpattern', 'MCvisualPattern', 'MCunderCursor' },
   },
+
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup({
+        suggestion = {
+          auto_trigger = true,
+          keymap = {
+            accept = "<C-l>",
+            accept_word = "<C-b>",
+            accept_line = "<F2>",
+          }
+        }
+      })
+    end,
+  },
+  { "AndreM222/copilot-lualine" },
 }
