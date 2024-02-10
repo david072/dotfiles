@@ -16,11 +16,31 @@ lvim.leader = "space"
 
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "clangd" })
 
-require("lvim.lsp.manager").setup("clangd", {
+local lsp_manager = require("lvim.lsp.manager");
+
+lsp_manager.setup("clangd", {
   cmd = {
     "clangd",
     "--background-index=0",
     "--query-driver=\"/home/david/dev/serenity/Toolchain/Local/**/*\"",
     "--header-insertion=never",
   }
+});
+lsp_manager.setup("eslint", {
+  on_attach = function(client, bufnr)
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      buffer = bufnr,
+      command = "EslintFixAll",
+    })
+  end,
+  settings = {
+    workingDirectory = { mode = "location" },
+  },
+});
+lsp_manager.setup("tsserver", {
+  on_attach = function(client, bufnr)
+    require("lvim.lsp").common_on_attach(client, bufnr);
+    client.server_capabilities.documentFormattingProvider = false;
+    client.server_capabilities.documentFormattingRangeProvider = false;
+  end,
 });
