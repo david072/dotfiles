@@ -220,6 +220,7 @@ for_window [title="^Android Emulator"] floating enable
 for_window [class="^discord$"] floating disable
 for_window [title="^QEMU.*$"] floating enable, move position center
 for_window [class="^Ladybird$"] floating enable, move position center
+for_window [title="^fencing_tableau$"] floating enable
 
 exec --no-startup-id bash ~/scripts/startup/startup.sh
 

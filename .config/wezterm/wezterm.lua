@@ -59,6 +59,11 @@ local linux_config = {
       mods = "CTRL|SHIFT",
       action = act.ActivatePaneDirection("Right"),
     },
+    {
+      key = "q",
+      mods = "CMD",
+      action = act.CloseCurrentPane({ confirm = true }),
+    }
   }
 }
 
