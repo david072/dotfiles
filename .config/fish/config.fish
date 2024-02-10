@@ -1,12 +1,14 @@
 if status is-interactive
   fish_add_path --path $HOME/Android/Sdk/cmdline-tools/latest/bin
   fish_add_path --path $HOME/Android/Sdk/emulator/
+  fish_add_path --path $HOME/Android/Sdk/platform-tools/
   fish_add_path --path /var/lib/flatpak/exports/bin
   fish_add_path --path $HOME/.local/share/bob/nvim-bin
   fish_add_path --path $HOME/.dotnet/tools
   fish_add_path --path $HOME/bin/Postman/Postman
   fish_add_path --path $HOME/scripts/
   fish_add_path --path $HOME/.local/bin
+  fish_add_path --path $HOME/.pub-cache/bin
 
   ssh-add ~/.ssh/david072_github 2> /dev/null
 
