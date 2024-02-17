@@ -80,6 +80,7 @@ lvim.plugins = {
   },
 
   -- Flutter
+  -- Make sure /usr/bin/dart exists or make it a symlink to the dart executable if it doesn't
   { "stevearc/dressing.nvim" },
   {
     "akinsho/flutter-tools.nvim",
@@ -88,7 +89,8 @@ lvim.plugins = {
       require("flutter-tools").setup({
         lsp = {
           on_attach = require("lvim.lsp").common_on_attach,
-        }
+        },
+        flutter_path = "/var/lib/snapd/snap/bin/flutter"
       })
     end
   },

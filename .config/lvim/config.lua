@@ -11,7 +11,6 @@ require("user.keymaps")
 require("user.which-key")
 
 vim.opt.relativenumber = true
-
 lvim.leader = "space"
 
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "clangd" })

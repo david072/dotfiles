@@ -104,6 +104,7 @@ local custom_lsp_component = {
   cond = require("lvim.core.lualine.conditions").hide_in_width,
 }
 
+-- Use custom lsp component for lualine to remove the copilot display
 lvim.builtin.lualine.on_config_done = function(lualine)
   local config = lualine.get_config()
   table.insert(config.sections.lualine_x, "copilot")
