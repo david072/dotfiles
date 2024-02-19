@@ -108,13 +108,43 @@ local custom_lsp_component = {
   cond = require("lvim.core.lualine.conditions").hide_in_width,
 }
 
+-- Displays a list of the open toggleterm terminal IDs
+local toggleterm_open_terminals = {
+  function()
+    local terminals = require("toggleterm.terminal").get_all()
+    if #terminals == 0 then
+      return ""
+    end
+
+    local ids = {}
+    for _, terminal in pairs(terminals) do
+      table.insert(ids, terminal.id)
+    end
+
+    return string.format("  %s", table.concat(ids, ","))
+  end,
+}
+
 -- Use custom lsp component for lualine to remove the copilot display
 lvim.builtin.lualine.on_config_done = function(lualine)
   local config = lualine.get_config()
   table.insert(config.sections.lualine_x, "copilot")
   table.remove(config.sections.lualine_x, 2)
   table.insert(config.sections.lualine_x, 2, custom_lsp_component)
+  table.insert(config.sections.lualine_x, 2, toggleterm_open_terminals)
   lualine.setup(config)
 end
 
+lvim.builtin.lualine.extensions = { "toggleterm" }
+
 lvim.builtin.bufferline.active = false
+
+lvim.builtin.lir.show_hidden_files = true
+lvim.builtin.lir.devicons.enable = true
+lvim.builtin.lir.mappings["v"] = nil
+lvim.builtin.lir.mappings["<C-v>"] = require("lir.actions").vsplit
+
+lvim.builtin["terminal"].open_mapping = "<F5>"
+lvim.builtin["terminal"].execs[3][2] = "<F6>" -- floating
+lvim.builtin["terminal"].execs[2][2] = "<F7>" -- vertical
+lvim.builtin["terminal"].execs[1][2] = "<F8>" -- horizontal

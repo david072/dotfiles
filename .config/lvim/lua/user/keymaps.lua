@@ -15,3 +15,6 @@ lvim.keys.visual_mode["p"] = "pgvy"
 -- Move lines
 lvim.keys.visual_mode["<S-j>"] = ":m '>+1<CR>gv=gv"
 lvim.keys.visual_mode["<S-k>"] = ":m '<-2<CR>gv=gv"
+
+-- Terminal mode
+lvim.keys.term_mode["<ESC>"] = "<C-\\><C-n>"

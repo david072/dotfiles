@@ -72,6 +72,23 @@ wk.mappings["G"] = {
   name = "Go To",
   c = { function() util.open_with_extension_if_exists("cpp") end, ".cpp file" },
   h = { function() util.open_with_extension_if_exists("h") end, ".h file" },
+  p = { "<cmd>e %:h<cr>", "Parent Directory" }
 }
 
-wk.mappings["s"]["n"] = { "<cmd>nohlsearch<cr>", "Hide search results" }
+wk.mappings["q"] = {}
+wk.mappings["w"] = {}
+wk.mappings["X"] = {}
+
+wk.mappings["w"] = {
+  name = "Floaterm",
+  t = { "<cmd>FloatermNew<cr>", "New" },
+  s = { "<cmd>FloatermShow<cr>", "Show" },
+  h = { "<cmd>FloatermHide<cr>", "Hide" },
+  n = { "<cmd>FloatermNext<cr>", "Next" },
+  p = { "<cmd>FloatermPrev<cr>", "Prev" },
+  k = { "<cmd>FloatermKill<cr>", "Kill" },
+}
+
+wk.mappings["b"] = {}
+
+wk.mappings["e"] = { "<cmd>e %:h<cr>", "Explore Directory" }
