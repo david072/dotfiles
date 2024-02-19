@@ -53,6 +53,8 @@ lvim.builtin.telescope.on_config_done = function(telescope)
   pcall(telescope.load_extension, "frecency")
 end
 
+lvim.builtin.telescope.defaults.borderchars = nil
+
 require("luasnip").filetype_extend("dart", { "flutter" })
 
 -- treesitter dart workaround

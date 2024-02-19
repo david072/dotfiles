@@ -21,6 +21,62 @@ lvim.plugins = {
       })
     end
   },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+    config = function()
+      require("tokyonight").setup({
+        style = "night",
+        transparent = true,
+        lualine_bold = true,
+        on_highlights = function(hl, c)
+          local prompt = "#2d3149"
+          hl.TelescopeNormal = {
+            bg = c.bg_dark,
+            fg = c.fg_dark,
+          }
+          hl.TelescopeResultsBorder = {
+            bg = c.bg_dark,
+            fg = c.bg_dark,
+          }
+          hl.TelescopePreviewBorder = {
+            bg = c.bg_dark,
+            fg = c.bg_dark,
+          }
+          hl.TelescopePromptNormal = {
+            bg = prompt,
+          }
+          hl.TelescopePromptBorder = {
+            bg = prompt,
+            fg = prompt,
+          }
+          hl.TelescopePromptTitle = {
+            bg = prompt,
+            fg = prompt,
+          }
+          hl.TelescopePreviewTitle = {
+            bg = prompt,
+            fg = c.fg_dark,
+          }
+          hl.TelescopeResultsTitle = {
+            bg = prompt,
+            fg = c.fg_dark,
+          }
+          lvim.builtin["terminal"].highlights = {
+            FloatBorder = {
+              guibg = c.bg_dark,
+              guifg = c.bg_dark,
+            },
+            NormalFloat = {
+              guibg = c.bg_dark,
+            },
+          }
+        end,
+      })
+    end,
+  },
 
   -- Highlight todo comments
   {
