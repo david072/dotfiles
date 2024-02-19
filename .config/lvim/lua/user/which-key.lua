@@ -21,6 +21,10 @@ wk.mappings["s"]["W"] = {
   "<cmd>lua require('telescope.builtin').grep_string({ search = vim.fn.expand('<cword>') })<cr>",
   "Search Word Under Cursor"
 }
+wk.mappings["s"]["u"] = {
+  "<cmd>Telescope buffers<cr>",
+  "Buffers",
+}
 
 wk.mappings["m"] = {
   name = "Harpoon",
@@ -34,7 +38,6 @@ wk.mappings["t"] = {
   name = "Telescope",
   p = { ":Telescope projects<cr>", "Projects" },
   r = { ":Telescope resume<cr>", "Resume" },
-  f = { ":Telescope find_files<cr>", "Files" },
   g = { ":Telescope git_files<cr>", "Git Files" },
 }
 
@@ -42,6 +45,11 @@ wk.mappings["T"] = {
   name = "Trouble",
   t = { "<cmd>TroubleToggle<cr>", "Toggle" },
   r = { "<cmd>TroubleRefresh<cr>", "Refresh" },
+}
+
+wk.mappings["f"] = {
+  "<cmd>Telescope find_files<cr>",
+  "Find Files"
 }
 
 wk.mappings["F"] = {

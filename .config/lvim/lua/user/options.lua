@@ -64,10 +64,12 @@ vim.opt.shell = "/bin/fish"
 vim.o.linebreak = true
 vim.o.wrap = false
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+vim.o.showtabline = 2
+vim.o.list = true
 
 local trouble = require("trouble.providers.telescope");
-lvim.builtin.telescope.defaults.mappings.i["<C-t>"] = trouble.open_with_trouble
-lvim.builtin.telescope.defaults.mappings.n["<C-t>"] = trouble.open_with_trouble
+lvim.builtin.telescope.defaults.mappings.i["<C-f>"] = trouble.open_with_trouble
+lvim.builtin.telescope.defaults.mappings.n["<C-f>"] = trouble.open_with_trouble
 
 -- Copied from LunarVim to remove the Copilot language server display
 local custom_lsp_component = {
@@ -114,3 +116,5 @@ lvim.builtin.lualine.on_config_done = function(lualine)
   table.insert(config.sections.lualine_x, 2, custom_lsp_component)
   lualine.setup(config)
 end
+
+lvim.builtin.bufferline.active = false
