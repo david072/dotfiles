@@ -59,6 +59,17 @@ wk.mappings["F"] = {
   r = { "<cmd>FlutterReload<cr>", "Hot Reload" },
   R = { "<cmd>FlutterRestart<cr>", "Hot Restart" },
   q = { "<cmd>FlutterQuit<cr>", "Quit" },
+  p = {
+    function()
+      local url, _ = require("flutter-tools.dev_tools").get_profiler_url()
+      if url == nil then
+        return
+      end
+
+      os.execute("firefox --new-tab --url " .. url);
+    end,
+    "Open Profiler in Firefox",
+  },
 }
 
 wk.mappings["b"]["q"] = { "<cmd>bd<cr>", "Close" }

@@ -146,7 +146,7 @@ lvim.plugins = {
         lsp = {
           on_attach = require("lvim.lsp").common_on_attach,
         },
-        flutter_path = "/var/lib/snapd/snap/bin/flutter"
+        flutter_path = "/home/david/snap/flutter/common/flutter/bin/flutter"
       })
     end
   },
