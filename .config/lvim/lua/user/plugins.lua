@@ -142,11 +142,19 @@ lvim.plugins = {
     "akinsho/flutter-tools.nvim",
     dependencies = { "nvim-lua/plenary.nvim", "stevearc/dressing.nvim" },
     config = function()
+      local sysname = vim.loop.os_uname().sysname
+      local flutter_path
+      if sysname == "Darwin" then
+        flutter_path = "/opt/homebrew/Caskroom/flutter/3.7.12/flutter/bin/flutter"
+      else
+        flutter_path = "/home/david/snap/flutter/common/flutter/bin/flutter"
+      end
+
       require("flutter-tools").setup({
         lsp = {
           on_attach = require("lvim.lsp").common_on_attach,
         },
-        flutter_path = "/home/david/snap/flutter/common/flutter/bin/flutter"
+        flutter_path = flutter_path,
       })
     end
   },

@@ -1,3 +1,5 @@
+local sysname = vim.loop.os_uname().sysname
+
 lvim.log.level = "warn"
 lvim.format_on_save = true
 
@@ -60,7 +62,12 @@ require("luasnip").filetype_extend("dart", { "flutter" })
 -- treesitter dart workaround
 -- lvim.builtin.treesitter.ignore_install = { "dart" }
 
-vim.opt.shell = "/bin/fish"
+if sysname == "Darwin" then
+  vim.opt.shell = "/opt/homebrew/bin/fish"
+else
+  vim.opt.shell = "/bin/fish"
+end
+
 vim.o.linebreak = true
 vim.o.wrap = false
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"

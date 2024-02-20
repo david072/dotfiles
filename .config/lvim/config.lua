@@ -43,3 +43,12 @@ lsp_manager.setup("tsserver", {
     client.server_capabilities.documentFormattingRangeProvider = false;
   end,
 });
+
+local sysname = vim.loop.os_uname().sysname
+if sysname == "Darwin" then
+  lsp_manager.setup("ocamllsp", {
+    cmd = {
+      "/Users/dg/.opam/default/bin/ocamllsp"
+    }
+  });
+end
