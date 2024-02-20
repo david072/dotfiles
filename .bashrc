@@ -15,6 +15,9 @@ PATH="$HOME/Android/Sdk/cmdline-tools/latest/bin:$PATH"
 PATH="$HOME/Android/Sdk/emulator:$PATH"
 PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
 PATH="$HOME/.dotnet/tools:$PATH"
+PATH="/opt/homebrew/bin:$PATH"
+PATH="$HOME/.opam/default/bin:$PATH"
+PATH="$HOME/.pub-cache/bin:$PATH"
 
 CPATH="$(clang -v 2>&1 | grep "Selected GCC installation" | rev | cut -d' ' -f1 | rev)/include"
 

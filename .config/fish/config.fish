@@ -9,6 +9,8 @@ if status is-interactive
   fish_add_path --path $HOME/scripts/
   fish_add_path --path $HOME/.local/bin
   fish_add_path --path $HOME/.pub-cache/bin
+  fish_add_path --path /opt/homebrew/bin
+  fish_add_path --path $HOME/.cargo/bin
 
   ssh-add ~/.ssh/david072_github 2> /dev/null
 
@@ -32,4 +34,4 @@ if status is-interactive
 end
 
 # opam configuration
-source /home/david/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
+source $HOME/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
