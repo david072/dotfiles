@@ -18,3 +18,6 @@ lvim.keys.visual_mode["<S-k>"] = ":m '<-2<CR>gv=gv"
 
 -- Terminal mode
 lvim.keys.term_mode["<ESC>"] = "<C-\\><C-n>"
+
+-- Clear search highlights
+lvim.keys.normal_mode["<ESC>"] = ":nohlsearch<CR>"
