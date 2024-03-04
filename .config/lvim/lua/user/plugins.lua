@@ -73,6 +73,10 @@ lvim.plugins = {
               guibg = c.bg_dark,
             },
           }
+          hl.FloatBorder = {
+            fg = c.bg_dark,
+            bg = c.bg_dark,
+          }
         end,
       })
     end,
