@@ -237,7 +237,7 @@ bindsym $mod+Ctrl+Shift+period exec "i3-nagbar -t warning -m 'You pressed the sh
 
 bindsym $mod+Shift+d exec bash ~/scripts/open_discord.sh
 bindsym $mod+Shift+t exec bash ~/scripts/open_twitch.sh
-bindsym $mod+Shift+f exec firefox --new-window
+bindsym $mod+Shift+f exec /var/lib/flatpak/exports/bin/org.mozilla.Firefox --new-window
 
 bindsym --release button2 kill
 # bindsym --whole-window $mod+button3 floating toggle

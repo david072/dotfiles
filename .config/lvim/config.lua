@@ -20,9 +20,10 @@ local lsp_manager = require("lvim.lsp.manager");
 lsp_manager.setup("clangd", {
   cmd = {
     "clangd",
-    "--background-index=0",
-    "--query-driver=\"/home/david/dev/serenity/Toolchain/Local/**/*\"",
-    "--header-insertion=never",
+    "--offset-encoding=utf-16"
+    -- "--background-index=0",
+    -- "--query-driver=\"/home/david/dev/serenity/Toolchain/Local/**/*\"",
+    -- "--header-insertion=never",
   }
 });
 lsp_manager.setup("eslint", {
