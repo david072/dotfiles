@@ -44,6 +44,8 @@ lsp_manager.setup("tsserver", {
     client.server_capabilities.documentFormattingRangeProvider = false;
   end,
 });
+lsp_manager.setup("gdscript", {});
+-- lsp_manager.setup("sourcekit", {});
 
 local sysname = vim.loop.os_uname().sysname
 if sysname == "Darwin" then

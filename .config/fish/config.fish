@@ -1,7 +1,8 @@
 if status is-interactive
-  fish_add_path --path $HOME/Android/Sdk/cmdline-tools/latest/bin
-  fish_add_path --path $HOME/Android/Sdk/emulator/
-  fish_add_path --path $HOME/Android/Sdk/platform-tools/
+  fish_add_path --path $HOME/dev/tools/Android/Sdk/cmdline-tools/latest/bin
+  fish_add_path --path $HOME/dev/tools/Android/Sdk/emulator/
+  fish_add_path --path $HOME/dev/tools/Android/Sdk/platform-tools/
+  fish_add_path --path $HOME/dev/tools/swift-5.10.1-RELEASE-fedora39/usr/bin
   fish_add_path --path /var/lib/flatpak/exports/bin
   fish_add_path --path $HOME/.local/share/bob/nvim-bin
   fish_add_path --path $HOME/.dotnet/tools
@@ -11,6 +12,8 @@ if status is-interactive
   fish_add_path --path $HOME/.pub-cache/bin
   fish_add_path --path /opt/homebrew/bin
   fish_add_path --path $HOME/.cargo/bin
+  fish_add_path --path $HOME/Applications
+  fish_add_path --path /usr/bin/flutter/bin
 
   ssh-add ~/.ssh/david072_github 2> /dev/null
 

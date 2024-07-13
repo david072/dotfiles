@@ -63,6 +63,7 @@ bindsym $mod+q kill
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# bindsym $mod+d exec --no-startup-id dmenu_run
 
 # change focus
 bindsym $mod+j focus down
@@ -210,10 +211,8 @@ bar {
 default_orientation horizontal
 hide_edge_borders smart_no_gaps
 
-workspace_auto_back_and_forth yes
-
-workspace 1 output HDMI-1 # left
-workspace 2 output DP-2   # main
+workspace 1 output HDMI-1  # left
+workspace 2 output DP-2    # main
 workspace 10 output HDMI-0 # right
 
 for_window [title="^Android Emulator"] floating enable
@@ -221,8 +220,12 @@ for_window [class="^discord$"] floating disable
 for_window [title="^QEMU.*$"] floating enable, move position center
 for_window [class="^Ladybird$"] floating enable, move position center
 for_window [title="^fencing_tableau$"] floating enable
+for_window [title="^boat_game$"] floating enable
+for_window [class="^.*bevy.*$"] floating enable
 
 exec --no-startup-id bash ~/scripts/startup/startup.sh
+exec --no-startup-id /usr/bin/xsettingsd
+exec --no-startup-id /usr/libexec/gsd-xsettings
 
 exec_always --no-startup-id picom --config /home/david/.config/picom.conf
 
@@ -237,7 +240,7 @@ bindsym $mod+Ctrl+Shift+period exec "i3-nagbar -t warning -m 'You pressed the sh
 
 bindsym $mod+Shift+d exec bash ~/scripts/open_discord.sh
 bindsym $mod+Shift+t exec bash ~/scripts/open_twitch.sh
-bindsym $mod+Shift+f exec /var/lib/flatpak/exports/bin/org.mozilla.Firefox --new-window
+bindsym $mod+Shift+f exec firefox --new-window
 
 bindsym --release button2 kill
 # bindsym --whole-window $mod+button3 floating toggle

@@ -81,6 +81,7 @@ lvim.plugins = {
       })
     end,
   },
+  { "rose-pine/neovim",              name = "rose-pine" },
 
   -- Highlight todo comments
   {
@@ -151,7 +152,7 @@ lvim.plugins = {
       if sysname == "Darwin" then
         flutter_path = "/opt/homebrew/Caskroom/flutter/3.7.12/flutter/bin/flutter"
       else
-        flutter_path = "/home/david/snap/flutter/common/flutter/bin/flutter"
+        flutter_path = "/usr/bin/flutter/bin/flutter"
       end
 
       require("flutter-tools").setup({
@@ -181,6 +182,7 @@ lvim.plugins = {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
     event = "InsertEnter",
+    enabled = false,
     config = function()
       require("copilot").setup({
         suggestion = {

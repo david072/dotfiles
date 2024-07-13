@@ -35,6 +35,7 @@ local linux_config = {
   command_palette_font_size = 12,
   -- color_scheme = "Gruvbox dark, medium (base16)",
   color_scheme = "tokyonight_night",
+  -- color_scheme = "rose-pine",
   use_fancy_tab_bar = false,
   window_background_opacity = .95,
   default_prog = { "/usr/bin/fish" },

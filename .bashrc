@@ -11,13 +11,17 @@ then
     PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 fi
 PATH="/var/lib/flatpak/exports/bin:$PATH"
-PATH="$HOME/Android/Sdk/cmdline-tools/latest/bin:$PATH"
-PATH="$HOME/Android/Sdk/emulator:$PATH"
+PATH="$HOME/dev/dg/tools/Android/Sdk/cmdline-tools/latest/bin:$PATH"
+PATH="$HOME/dev/dg/tools/Android/Sdk/emulator:$PATH"
+PATH="$HOME/dev/dg/tools/Android/Sdk/platform-tools:$PATH"
+PATH="$HOME/dev/dg/tools/Android/Sdk/tools:$PATH"
+PATH="$HOME/dev/dg/tools/Android/ndk-build:$PATH"
 PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
 PATH="$HOME/.dotnet/tools:$PATH"
 PATH="/opt/homebrew/bin:$PATH"
 PATH="$HOME/.opam/default/bin:$PATH"
 PATH="$HOME/.pub-cache/bin:$PATH"
+PATH="$HOME/Applications:$PATH"
 
 CPATH="$(clang -v 2>&1 | grep "Selected GCC installation" | rev | cut -d' ' -f1 | rev)/include"
 
@@ -34,3 +38,4 @@ if [ -d ~/.bashrc.d ]; then
 fi
 
 unset rc
+. "$HOME/.cargo/env"

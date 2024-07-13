@@ -155,3 +155,5 @@ lvim.builtin["terminal"].open_mapping = "<F5>"
 lvim.builtin["terminal"].execs[3][2] = "<F6>" -- floating
 lvim.builtin["terminal"].execs[2][2] = "<F7>" -- vertical
 lvim.builtin["terminal"].execs[1][2] = "<F8>" -- horizontal
+
+lvim.builtin.telescope.theme = nil
